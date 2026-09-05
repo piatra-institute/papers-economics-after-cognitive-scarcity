@@ -10,7 +10,7 @@ has_simulation: true
 claims_target: results.json
 repo: git@github.com:piatra-institute/papers-economics-after-cognitive-scarcity.git
 github: https://github.com/piatra-institute/papers-economics-after-cognitive-scarcity
-status: built
+status: published
 abstract: 'Arguments about what artificial intelligence will do to work keep one thing fixed while everything
   else moves: the assumption that whatever machines cannot yet do is a durable human province. This paper
   calls that the permanent-remainder assumption and computes what it would take to be true. Under a counterfactual
