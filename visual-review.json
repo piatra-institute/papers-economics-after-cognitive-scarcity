@@ -1,0 +1,17 @@
+{
+  "pdf_sha256": "f926652d4fcd1dd3c4709394c78adcfc115b4a5db99f6434a67a96cbb8a0a722",
+  "page_count": 9,
+  "pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "all_pages_inspected": true,
+  "notes": "All nine pages read in the rendered PDF. Title page sets the subtitle below the title correctly and the running header is right from page 3. Display math for the limit renders cleanly and the inline Greek in the task model is legible. Both figures render at readable size: figure 1 panel (c) shows three markers on a single dashed limit line, which is the intended reading and is explained in the caption; figure 2 panel (a) has no grey region because the safe-state procedure wins nowhere on that plane, which the caption states explicitly so the unused legend entry is not misread. The citeproc bibliography is complete across pages 8 and 9 with all DOIs rendered. No missing-character warnings in the build log."
+}

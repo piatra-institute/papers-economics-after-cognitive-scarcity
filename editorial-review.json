@@ -1,0 +1,10 @@
+{
+  "manuscript_sha256": "e857731d4d1bdd4bf429ad736b44530507774c6192945600a4342407a14b7b13",
+  "full_read": true,
+  "argument_review": true,
+  "structure_review": true,
+  "voice_review": true,
+  "source_review": true,
+  "final_read": true,
+  "notes": "Full read of the built PDF and of the manuscript source. Argument, structure and voice reviewed as recorded in editorial.md; ten voice diagnostics were triaged, four rewritten and six kept with reasons. Source review changed the text: an attribution to Endsley and Kiris of a specific experimental finding was weakened to what the title and subject establish, because the full text could not be retrieved. The abstract is 242 words and was written after the argument."
+}

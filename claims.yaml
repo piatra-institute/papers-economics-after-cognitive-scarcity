@@ -1,0 +1,327 @@
+schema: 1
+coverage: reviewed
+reviewed_manuscript_sha256: e857731d4d1bdd4bf429ad736b44530507774c6192945600a4342407a14b7b13
+claims:
+  - id: ratio-no-pooling
+    kind: computation
+    passage: >-
+      With no pooling, each of the ten consumes 9.000 and each of the ninety
+      consumes 0.111, a ratio of 81 to 1.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /allocation/ratio_no_pooling
+      reported: '81'
+      decimals: 0
+      units: ratio of consumption per person between the two groups
+      conditions: 100 people, ten owning 90 percent of assets, no pooling, supplies fixed at 100
+  - id: consumption-top-no-pooling
+    kind: computation
+    passage: >-
+      With no pooling, each of the ten consumes 9.000 and each of the ninety
+      consumes 0.111, a ratio of 81 to 1.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /allocation/rows/0/consumption_top
+      reported: '9.000'
+      decimals: 3
+      units: units of the consumption good per person
+      conditions: same equilibrium, a member of the ten-person owning group
+  - id: consumption-rest-no-pooling
+    kind: computation
+    passage: >-
+      With no pooling, each of the ten consumes 9.000 and each of the ninety
+      consumes 0.111, a ratio of 81 to 1.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /allocation/rows/0/consumption_rest
+      reported: '0.111'
+      decimals: 3
+      units: units of the consumption good per person
+      conditions: same equilibrium, a member of the ninety-person group
+  - id: ratio-half-pooling
+    kind: computation
+    passage: >-
+      Pooling half of asset income gives 5.000 against 0.556, a ratio of 9 to 1.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /allocation/ratio_half_pooling
+      reported: '9'
+      decimals: 0
+      units: ratio of consumption per person between the two groups
+      conditions: same equilibrium with half of asset income pooled and shared equally
+  - id: support-check
+    kind: computation
+    passage: >-
+      For any strictly positive vector of consumption shares summing to one
+      there is an ownership vector that supports it, which was checked here
+      against 200 randomly drawn target distributions with exact agreement.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /allocation/supportable_share_vectors_tested
+      reported: '200'
+      units: randomly drawn target share vectors
+      conditions: Dirichlet draws over 100 people, tau = 0, exact recovery of each target
+  - id: housing-unchanged
+    kind: computation
+    passage: >-
+      Housing quantities per person do not move at all, at 9.000 and 0.111
+      exactly as before; what changes is the relative price of housing, from
+      1.0 to 10.0.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /allocation/scaled/housing_top
+      reported: '9.000'
+      decimals: 3
+      units: units of housing service per person
+      conditions: consumption good multiplied tenfold, housing supply and ownership unchanged
+  - id: housing-price
+    kind: computation
+    passage: >-
+      Housing quantities per person do not move at all, at 9.000 and 0.111
+      exactly as before; what changes is the relative price of housing, from
+      1.0 to 10.0.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /allocation/scaled/price_of_housing
+      reported: '10.0'
+      decimals: 1
+      units: units of the consumption good per unit of housing service
+      conditions: same experiment, eta = 1
+  - id: closed-form-error
+    kind: computation
+    passage: >-
+      which the simulation reproduces to within $5.50 \times 10^{-5}$ across a
+      grid of turnover and overtaking rates.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /remainder/max_closed_form_error
+      reported: '5.50 \times 10^{-5}'
+      significant_digits: 3
+      units: share of tasks, absolute difference
+      conditions: worst cell of a twelve-cell grid over turnover and overtaking rates, 400-year horizon
+  - id: share-fast-sweep
+    kind: computation
+    passage: >-
+      The optimistic proposition is true, and it is compatible with the human
+      share of tasks being 0.048 when capability overtakes a new task in a year
+      and turnover is 5 percent a year.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /remainder/share_at_turnover_5_sweep_100
+      reported: '0.048'
+      decimals: 3
+      units: share of tasks held by people in the limit
+      conditions: capability overtakes a new task in a year, turnover 5 percent a year
+  - id: arrival-cancels
+    kind: computation
+    passage: >-
+      Varying $\nu$ from 1 to 100 new tasks a year changes the limiting share
+      by 0.000000.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /remainder/arrival_spread
+      reported: '0.000000'
+      decimals: 6
+      units: share of tasks, spread across arrival rates
+      conditions: overtaking 0.20, turnover 0.05, arrival rates 1, 10 and 100 per year
+  - id: atom-limit
+    kind: computation
+    passage: >-
+      With a tenth of new tasks of that kind the limiting share rises from
+      0.048 to 0.143.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /remainder/share_with_ten_percent_atom
+      reported: '0.143'
+      decimals: 3
+      units: share of tasks held by people in the limit
+      conditions: a tenth of new tasks require something capability never satisfies
+  - id: human-optimal-share
+    kind: computation
+    passage: >-
+      Over the plane of capability and shared failure, the person is the right
+      fallback in 84.85 percent of cells.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /fallback/human_optimal_share
+      reported: '84.85'
+      scale: 100
+      decimals: 2
+      units: percent of grid cells
+      conditions: 50 capability levels by 40 shared-failure levels, stated success probabilities
+  - id: independence-requirement
+    kind: computation
+    passage: >-
+      It must share at most 0.341 of the primary's failures to beat the person
+      at any capability at or below one.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /fallback/max_dependence_a_second_system_can_carry
+      reported: '0.341'
+      decimals: 3
+      units: share of the primary's failures the second system also fails on
+      conditions: practised responder at 0.72 unconditional success sharing a tenth of failures
+  - id: containment-crossing
+    kind: computation
+    passage: >-
+      It crosses the safe-state procedure at 50 percent automation of routine
+      incidents: past that point an out-of-practice person, in this model, is
+      worse than putting the system into a contained state and not diagnosing
+      at all.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /fallback/routine_share_at_which_a_person_loses_to_containment
+      reported: '50'
+      scale: 100
+      decimals: 0
+      units: percent of routine incidents automated
+      conditions: proportional readiness loss of 0.35 at full automation, containment at 0.55
+  - id: selection-rise
+    kind: computation
+    passage: >-
+      automating 75 percent of routine incidents raises the mean human
+      resolution time by a factor of 1.88 with no change in competence
+      whatsoever.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /fallback/selection_rise_at_75
+      reported: '1.88'
+      decimals: 2
+      units: multiple of the unselected mean resolution time
+      conditions: 200000 incidents, gamma difficulty with shape 1.6, resolution linear in difficulty
+  - id: degradation-rise
+    kind: computation
+    passage: >-
+      A cohort whose competence degrades on an unchanged case mix shows a
+      factor of 1.36.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /fallback/degradation_rise_at_75
+      reported: '1.36'
+      decimals: 2
+      units: multiple of the baseline mean resolution time
+      conditions: same cohort, unchanged case mix, readiness loss of 0.35 at full automation
+  - id: selection-share
+    kind: computation
+    passage: >-
+      Combining both, selection accounts for 71 percent of the rise.
+    evidence:
+      file: simulation/output/results.json
+      run_id: benchmarks
+      pointer: /fallback/selection_share_of_observed_rise
+      reported: '71'
+      scale: 100
+      decimals: 0
+      units: percent of the combined proportional rise
+      conditions: 75 percent of routine incidents automated, both effects at their stated magnitudes
+  - id: bainbridge-support
+    kind: source
+    passage: >-
+      Bainbridge's analysis of automation is built around systems in which a
+      person is expected to take over in abnormal conditions, and observes that
+      automation removes exactly the routine practice that keeps such a person
+      capable [@bainbridge1983].
+    evidence:
+      citation_id: bainbridge1983
+      locator: "Automatica 19(6), 775-779, on the monitoring and takeover role"
+      verified: true
+      verification_note: >-
+        Identity confirmed against Crossref (DOI 10.1016/0005-1098(83)90046-8).
+        The paper's argument concerns systems where the operator is retained to
+        handle abnormal conditions, and the manuscript attributes only that to
+        her, together with her recommendation of automatic shutdown where
+        appropriate. It does not attribute to her any claim about the permanent
+        superiority of human responders, which she does not make.
+  - id: endsley-support
+    kind: source
+    passage: >-
+      The difficulty has a name and a literature of its own, the out-of-the-loop
+      performance problem, which studies how automation degrades an operator's
+      readiness to resume control [@endsley1995].
+    evidence:
+      citation_id: endsley1995
+      locator: "Human Factors 37(2), 381-394; title and subject of the article"
+      verified: true
+      verification_note: >-
+        Identity confirmed against Crossref (DOI 10.1518/001872095779064555):
+        Endsley and Kiris, 'The out-of-the-loop performance problem and level of
+        control in automation', Human Factors 37(2), 381-394, 1995. The full
+        text and abstract could not be retrieved in this pass; the publisher
+        returns 403 and neither Semantic Scholar nor Europe PMC holds an
+        abstract. The manuscript was therefore rewritten to assert only what the
+        title and subject establish, that the problem is named and studied in
+        this literature, and it no longer attributes any specific experimental
+        finding, sample or effect size to these authors.
+  - id: acemoglu-conditional
+    kind: source
+    passage: >-
+      Acemoglu and Restrepo model new tasks in which labour has a comparative
+      advantage and are explicit that their framework also contains a regime in
+      which all tasks are automated [@acemoglu2018]; Autor's account of why so
+      many jobs remain is a careful argument about complementarity under
+      conditions he states [@autor2015].
+    evidence:
+      citation_id: acemoglu2018
+      locator: "American Economic Review 108(6), 1488-1542, the task framework and its regimes"
+      verified: true
+      verification_note: >-
+        Identity confirmed against Crossref (DOI 10.1257/aer.20160696). The
+        paper's task-based framework includes the creation of new labour-intensive
+        tasks and analyses a full-automation regime among its cases. The
+        manuscript cites this to credit the authors with stating their premises,
+        and directs its criticism at the unconditional use of conditional
+        results rather than at their model.
+  - id: free-cognition-premise
+    kind: assumption
+    passage: >-
+      Every attainable cognitive service, at every quality, is free to develop,
+      to copy and to execute, and everyone and every institution has
+      unrestricted access.
+    rationale: >-
+      The universal-access clause is separate from the zero-cost clause and is
+      assumed deliberately, so that no inequality in the models can be
+      attributed to unequal access to intelligence. Dropping it would give a
+      different and easier paper in which concentration is explained by
+      gatekeeping; keeping it forces the distributional results to come from
+      ownership alone, which is the point being tested.
+  - id: task-units
+    kind: assumption
+    passage: >-
+      the task model has no prices in it and therefore bounds an income share
+      rather than computing one
+    rationale: >-
+      Tasks are counted, not valued. A model with wages would require an
+      assumption about what a human-held task earns once its cognitive content
+      is free, which is exactly the question at issue, so the paper reports the
+      share of tasks and states that it is an upper bound on the share of income
+      rather than silently converting one into the other.
+  - id: fallback-model-scope
+    kind: interpretation
+    passage: >-
+      the fallback model prices a single incident class with stated success
+      probabilities and no correlated cascades
+    rationale: >-
+      This states a limit rather than a result. Real incident populations are
+      heterogeneous and failures cascade; the model's value is that it makes the
+      independence requirement explicit and computable, not that its numbers
+      describe any real operation.
+runs:
+  - id: benchmarks
+    required: true
+    record: verification/benchmarks.json

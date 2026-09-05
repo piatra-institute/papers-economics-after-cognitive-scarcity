@@ -1,0 +1,177 @@
+# CSL references with stable IDs; cite using Pandoc [@id] syntax.
+references:
+  - id: acemoglu2018
+    type: article-journal
+    title: "The race between man and machine: implications of technology for growth, factor shares, and employment"
+    author: [{family: Acemoglu, given: Daron}, {family: Restrepo, given: Pascual}]
+    container-title: American Economic Review
+    volume: "108"
+    issue: "6"
+    page: "1488-1542"
+    issued: {date-parts: [[2018]]}
+    DOI: 10.1257/aer.20160696
+  - id: autor2015
+    type: article-journal
+    title: "Why are there still so many jobs? The history and future of workplace automation"
+    author: [{family: Autor, given: "David H."}]
+    container-title: Journal of Economic Perspectives
+    volume: "29"
+    issue: "3"
+    page: "3-30"
+    issued: {date-parts: [[2015]]}
+    DOI: 10.1257/jep.29.3.3
+  - id: bainbridge1983
+    type: article-journal
+    title: "Ironies of automation"
+    author: [{family: Bainbridge, given: Lisanne}]
+    container-title: Automatica
+    volume: "19"
+    issue: "6"
+    page: "775-779"
+    issued: {date-parts: [[1983]]}
+    DOI: 10.1016/0005-1098(83)90046-8
+  - id: endsley1995
+    type: article-journal
+    title: "The out-of-the-loop performance problem and level of control in automation"
+    author: [{family: Endsley, given: "Mica R."}, {family: Kiris, given: "Esin O."}]
+    container-title: Human Factors
+    volume: "37"
+    issue: "2"
+    page: "381-394"
+    issued: {date-parts: [[1995]]}
+    DOI: 10.1518/001872095779064555
+  - id: growiec2023
+    type: report
+    title: "Hardware and software over the course of long-run growth: theory and evidence"
+    author:
+      - {family: Growiec, given: Jakub}
+      - {family: Jabłońska, given: Julia}
+      - {family: Parteka, given: Aleksandra}
+    publisher: "SGH KAE Working Paper"
+    issued: {date-parts: [[2023]]}
+    DOI: 10.33119/kaewps2023091
+  - id: lucas1976
+    type: article-journal
+    title: "Econometric policy evaluation: a critique"
+    author: [{family: Lucas, given: "Robert E."}]
+    container-title: Carnegie-Rochester Conference Series on Public Policy
+    volume: "1"
+    page: "19-46"
+    issued: {date-parts: [[1976]]}
+    DOI: 10.1016/S0167-2231(76)80003-6
+  - id: marschak1968
+    type: report
+    title: "Economics of inquiring, communicating, deciding"
+    author: [{family: Marschak, given: Jacob}]
+    issued: {date-parts: [[1968]]}
+    DOI: 10.21236/ad0668496
+  - id: meade1993
+    type: chapter
+    title: "Efficiency, equality and the ownership of property"
+    author: [{family: Meade, given: "James E."}]
+    container-title: "Liberty, Equality and Efficiency"
+    page: "21-81"
+    publisher: Palgrave Macmillan
+    issued: {date-parts: [[1993]]}
+    DOI: 10.1007/978-1-349-13084-9_2
+  - id: myerson1983
+    type: article-journal
+    title: "Efficient mechanisms for bilateral trading"
+    author:
+      - {family: Myerson, given: "Roger B."}
+      - {family: Satterthwaite, given: "Mark A."}
+    container-title: Journal of Economic Theory
+    volume: "29"
+    issue: "2"
+    page: "265-281"
+    issued: {date-parts: [[1983]]}
+    DOI: 10.1016/0022-0531(83)90048-0
+  - id: nilsson1985
+    type: article-journal
+    title: "Artificial intelligence, employment, and income"
+    author: [{family: Nilsson, given: "Nils J."}]
+    container-title: Human Systems Management
+    volume: "5"
+    issue: "2"
+    page: "123-135"
+    issued: {date-parts: [[1985]]}
+    DOI: 10.3233/hsm-1985-5205
+  - id: ostrom2010
+    type: article-journal
+    title: "Beyond markets and states: polycentric governance of complex economic systems"
+    author: [{family: Ostrom, given: Elinor}]
+    container-title: American Economic Review
+    volume: "100"
+    issue: "3"
+    page: "641-672"
+    issued: {date-parts: [[2010]]}
+    DOI: 10.1257/aer.100.3.641
+  - id: romer1990
+    type: article-journal
+    title: "Endogenous technological change"
+    author: [{family: Romer, given: "Paul M."}]
+    container-title: Journal of Political Economy
+    volume: "98"
+    issue: "5"
+    page: "S71-S102"
+    issued: {date-parts: [[1990]]}
+    DOI: 10.1086/261725
+  - id: sen1999
+    type: article-journal
+    title: "Democracy as a universal value"
+    author: [{family: Sen, given: Amartya}]
+    container-title: Journal of Democracy
+    volume: "10"
+    issue: "3"
+    page: "3-17"
+    issued: {date-parts: [[1999]]}
+    DOI: 10.1353/jod.1999.0055
+  - id: simon1960
+    type: book
+    title: "The New Science of Management Decision"
+    author: [{family: Simon, given: "Herbert A."}]
+    publisher: "Harper & Brothers"
+    issued: {date-parts: [[1960]]}
+    DOI: 10.1037/13978-000
+  - id: trammell2026
+    type: article-journal
+    title: "Economic growth under transformative AI"
+    author: [{family: Trammell, given: Philip}, {family: Korinek, given: Anton}]
+    container-title: Annual Review of Economics
+    volume: "18"
+    issue: "1"
+    page: "589-611"
+    issued: {date-parts: [[2026]]}
+    DOI: 10.1146/annurev-economics-051624-061002
+  - id: tullock2001
+    type: chapter
+    title: "Efficient rent seeking"
+    author: [{family: Tullock, given: Gordon}]
+    container-title: "Efficient Rent-Seeking: Chronicle of an Intellectual Quagmire"
+    page: "3-16"
+    publisher: Springer
+    issued: {date-parts: [[2001]]}
+    DOI: 10.1007/978-1-4757-5055-3_2
+  - id: turing1950
+    type: article-journal
+    title: "Computing machinery and intelligence"
+    author: [{family: Turing, given: "A. M."}]
+    container-title: Mind
+    volume: "LIX"
+    issue: "236"
+    page: "433-460"
+    issued: {date-parts: [[1950]]}
+    DOI: 10.1093/mind/LIX.236.433
+  - id: yokoo2004
+    type: article-journal
+    title: "The effect of false-name bids in combinatorial auctions: new fraud in Internet auctions"
+    author:
+      - {family: Yokoo, given: Makoto}
+      - {family: Sakurai, given: Yuko}
+      - {family: Matsubara, given: Shigeo}
+    container-title: Games and Economic Behavior
+    volume: "46"
+    issue: "1"
+    page: "174-188"
+    issued: {date-parts: [[2004]]}
+    DOI: 10.1016/S0899-8256(03)00045-9

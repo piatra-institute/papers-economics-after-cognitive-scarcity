@@ -1,0 +1,9 @@
+[project]
+name = "economics-after-cognitive-scarcity-sim"
+version = "0.1.0"
+description = "What free cognition does and does not determine: an exact allocation benchmark, the arithmetic of a permanent human remainder, and when a human is the optimal fallback"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+]

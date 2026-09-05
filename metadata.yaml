@@ -1,0 +1,34 @@
+slug: economics-after-cognitive-scarcity
+web_slug: economics-after-cognitive-scarcity
+title: 'Economics After Cognitive Scarcity: The Permanent-Remainder Assumption and What Would Have to
+  Be True for It to Hold'
+header: Economics After Cognitive Scarcity
+created: 2026-09
+date: September 2026
+paper_dir: paper
+has_simulation: true
+claims_target: results.json
+repo: git@github.com:piatra-institute/papers-economics-after-cognitive-scarcity.git
+github: https://github.com/piatra-institute/papers-economics-after-cognitive-scarcity
+status: built
+abstract: 'Arguments about what artificial intelligence will do to work keep one thing fixed while everything
+  else moves: the assumption that whatever machines cannot yet do is a durable human province. This paper
+  calls that the permanent-remainder assumption and computes what it would take to be true. Under a counterfactual
+  in which every attainable cognitive service is free and universally available, three benchmarks are
+  solved. An exact two-good equilibrium with identical preferences and identical free cognition yields
+  consumption ratios of 81 to 1, 9 to 1 or 1 to 1 between the same two groups depending only on ownership
+  and pooling, so equal intelligence does not narrow the distribution at all. A task model then separates
+  two propositions the usual argument runs together: the set of tasks people still hold can be nonempty
+  at every date while their share of tasks converges to $\delta/(a+\delta)$, where $\delta$ is task turnover
+  and $a$ the rate at which capability overtakes a new task. That limit does not depend on how fast new
+  work appears, and a positive limit requires tasks needing something other than reasoning. Finally, the
+  argument that automation must leave a human fallback holds across 84.85 percent of the plane of machine
+  capability and failure independence and fails in a computable region, while past 50 percent automation
+  of routine incidents an out-of-practice responder falls below plain containment. The paper''s limits
+  are stated: these are benchmarks with no prices, no investment and no empirical calibration.'
+build_resources:
+- simulation/output/figures/allocation.png
+- simulation/output/figures/fallback.png
+web_blurb: 'Whatever machines cannot yet do is assumed to be a durable human province. Three benchmarks
+  under free cognition compute what that assumption would require: the share of tasks people hold converges
+  to a limit that does not depend on how fast new work appears.'
