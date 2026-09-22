@@ -294,6 +294,12 @@ def run_fallback() -> dict:
                       "human_beats_safe_state": h > SAFE_STATE_SUCCESS})
     first_loss = next((d["routine_automated"] for d in decay
                        if not d["human_beats_safe_state"]), None)
+    # conditional success is linear in the automated share, so the crossing with
+    # containment and the independence bound have closed forms; the grid values
+    # above are only the first evaluated points past each threshold
+    crossing_exact = (1.0 - SAFE_STATE_SUCCESS
+                      / (BASE_HUMAN_SKILL * (1.0 - HUMAN_SHARED_FAILURE))) / SKILL_DECAY
+    max_dependence_exact = 1.0 - human
 
     # the confound: automation removes easy cases, competence held fixed
     rng = np.random.default_rng(SEED + 5)
@@ -330,11 +336,13 @@ def run_fallback() -> dict:
         "human_optimal_share": human_cells / total_cells,
         "crossovers": crossovers,
         "max_dependence_a_second_system_can_carry": max_dependence,
+        "max_dependence_exact": max_dependence_exact,
         "capability_needed_at_half_dependence":
             next(c["capability_needed"] for c in crossovers
                  if abs(c["dependence"] - 0.4872) < 1e-3),
         "decay": decay,
         "routine_share_at_which_a_person_loses_to_containment": first_loss,
+        "containment_crossing_exact": crossing_exact,
         "selection": selection, "degradation": degraded,
         "baseline_hours": baseline,
         "selection_rise_at_75": at_75["rise_over_baseline"],
@@ -394,9 +402,18 @@ def run() -> dict:
             fall["human_optimal_share"] > 0.80,
         "but_not_always": fall["human_optimal_share"] < 1.0,
         "a_second_system_has_to_be_independent":
-            fall["max_dependence_a_second_system_can_carry"] < 0.50,
-        "deskilling_crosses_containment_at_half_automation":
-            fall["routine_share_at_which_a_person_loses_to_containment"] == 0.5,
+            fall["max_dependence_exact"] < 0.50,
+        "the_grid_independence_bound_sits_just_below_the_exact_one":
+            0.0 <= fall["max_dependence_exact"]
+            - fall["max_dependence_a_second_system_can_carry"]
+            < float(DEPENDENCE_GRID[1] - DEPENDENCE_GRID[0]),
+        "the_exact_crossing_lies_between_the_grid_points_that_bracket_it":
+            0.25 < fall["containment_crossing_exact"] < 0.50
+            and fall["routine_share_at_which_a_person_loses_to_containment"] == 0.5,
+        "at_the_exact_crossing_the_responder_equals_containment":
+            abs(_conditional(BASE_HUMAN_SKILL * (1.0 - SKILL_DECAY
+                                                 * fall["containment_crossing_exact"]),
+                             HUMAN_SHARED_FAILURE) - SAFE_STATE_SUCCESS) < 1e-12,
         "a_degraded_responder_falls_below_containment":
             not dec[0.75]["human_beats_safe_state"]
             and dec[0.0]["human_beats_safe_state"],

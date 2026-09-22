@@ -1,5 +1,5 @@
 {
-  "pdf_sha256": "a8d2996a3ae832cb72ac546934b6509417bd0396047aaccc50cfb956178e8d4d",
+  "pdf_sha256": "4c3ad807f1a7c959a87ce1f416937ac43be60d8558ed5fd8fde436e8799a4235",
   "page_count": 9,
   "pages_inspected": [
     1,
@@ -13,5 +13,5 @@
     9
   ],
   "all_pages_inspected": true,
-  "notes": "All nine pages read in the rendered PDF. Title page sets the subtitle below the title correctly and the running header is right from page 3. Display math for the limit renders cleanly and the inline Greek in the task model is legible. Both figures render at readable size: figure 1 panel (c) shows three markers on a single dashed limit line, which is the intended reading and is explained in the caption; figure 2 panel (a) has no grey region because the safe-state procedure wins nowhere on that plane, which the caption states explicitly so the unused legend entry is not misread. The citeproc bibliography is complete across pages 8 and 9 with all DOIs rendered. No missing-character warnings in the build log. Re-inspected after a rebuild whose only changed input was the publication status in metadata.yaml; the extracted text of the rebuilt PDF is byte-identical to the inspected version and the page count is unchanged, so this record carries forward to the new hash."
+  "notes": "All nine pages of the rebuilt PDF were read at full size. Title, abstract and six body sections set correctly; running head and pagination are continuous; the displayed limit on page 4 renders correctly. Both figures were regenerated with descriptive panel titles. Figure 2 had two further defects, both fixed: panel (b) placed the crossing line and its label at 50 percent while the plotted responder line visibly crossed containment near 43 percent, and panel (a) drew its legend without a background so that the 'human' swatch disappeared into the blue region. The crossing now sits at the exact value of 43.2 percent where the lines intersect, the legend has an opaque frame, and a dotted line marks the exact independence bound. Figures were inspected as source images and in page context on pages 4 and 6. The bibliography runs pages 8 and 9 with all 21 entries. No overfull lines, clipped figures or orphaned headings. Metadata-only rebuild: the web blurb in metadata.yaml, a hashed build input, changed, so the PDF was re-rendered (4e061701f7aa to 4c3ad807f1a7); the rendered text is byte-for-byte identical and no page was re-inspected."
 }

@@ -41,7 +41,7 @@ def plot_allocation(res, path):
     ax.set_xticklabels(labels, fontsize=8.4)
     ax.set_ylabel("consumption per person", fontsize=8.5)
     ax.set_ylim(0, 10.6)
-    ax.set_title("a. identical intelligence, three distributions", fontsize=9.5,
+    ax.set_title("a. consumption under three pooling rules", fontsize=9.5,
                  color=INK, loc="left")
     ax.legend(fontsize=7.2, frameon=False, loc="upper right")
     _style(ax)
@@ -58,7 +58,7 @@ def plot_allocation(res, path):
     ax.set_xlabel("years", fontsize=9)
     ax.set_ylabel("share of tasks held by people", fontsize=8.5)
     ax.set_ylim(0, 1.02)
-    ax.set_title("b. an always-nonempty frontier, a vanishing share",
+    ax.set_title("b. human share of tasks over time",
                  fontsize=9.5, color=INK, loc="left")
     ax.legend(fontsize=6.8, frameon=False, loc="upper right")
     _style(ax)
@@ -77,7 +77,7 @@ def plot_allocation(res, path):
     ax.set_ylim(0.15, 0.25)
     ax.set_xlabel("rate at which new tasks appear", fontsize=9)
     ax.set_ylabel("share of tasks held by people", fontsize=8.5)
-    ax.set_title("c. more new work changes nothing", fontsize=9.5, color=INK,
+    ax.set_title("c. limit share by arrival rate", fontsize=9.5, color=INK,
                  loc="left")
     ax.legend(fontsize=7.2, frameon=False, loc="lower right")
     _style(ax)
@@ -103,25 +103,27 @@ def plot_fallback(res, path):
     ax.set_xlabel("share of the primary's failures the second system also fails on",
                   fontsize=8)
     ax.set_ylabel("capability of the second system", fontsize=8.5)
-    ax.set_title("a. which fallback is right", fontsize=9.5, color=INK, loc="left")
+    ax.set_title("a. best fallback", fontsize=9.5, color=INK, loc="left")
     ax.legend(handles=[Patch(color=c, label=n) for c, n in zip(colours, names)],
-              fontsize=7.2, frameon=False, loc="lower left")
+              fontsize=7.2, frameon=True, framealpha=1.0, facecolor="white",
+              edgecolor=GRID, loc="lower right")
+    ax.axvline(F["max_dependence_exact"], color=INK, lw=0.9, ls=":")
     ax.grid(False)
 
     ax = axes[1]
     shares = [d["routine_automated"] for d in F["decay"]]
     ax.plot(shares, [d["human_conditional"] for d in F["decay"]], color=BLUE,
-            lw=2.0, marker="o", ms=4.6, label="a responder who has stopped practising")
+            lw=2.0, marker="o", ms=4.6, label="responder without routine practice")
     ax.axhline(F["safe_state"], color=GRAY, lw=1.6, ls="--",
                label="containment, no diagnosis")
-    cross = F["routine_share_at_which_a_person_loses_to_containment"]
+    cross = F["containment_crossing_exact"]
     ax.axvline(cross, color=RED, lw=1.0, ls=":")
-    ax.text(cross + 0.02, 0.68, f"crosses at {cross:.0%}\nof routine incidents\nautomated",
+    ax.text(cross + 0.02, 0.68, f"crossing at {cross:.1%}\nautomation",
             fontsize=7.4, color=RED)
     ax.set_xlabel("share of routine incidents handled automatically", fontsize=8.6)
     ax.set_ylabel("success given the primary failed", fontsize=8.5)
     ax.set_ylim(0.40, 0.72)
-    ax.set_title("b. where Bainbridge's irony bites", fontsize=9.5, color=INK,
+    ax.set_title("b. responder success and containment", fontsize=9.5, color=INK,
                  loc="left")
     ax.legend(fontsize=7.2, frameon=False, loc="lower left")
     _style(ax)
@@ -132,15 +134,15 @@ def plot_fallback(res, path):
     ax.plot(shares, sel, color=AMBER, lw=2.0, marker="o", ms=4.6,
             label="harder cases, competence unchanged")
     ax.plot(shares, deg, color=RED, lw=2.0, ls="--", marker="s", ms=4.2,
-            label="same cases, competence degraded")
-    ax.annotate(f"{F['selection_share_of_observed_rise']:.0%} of the rise\nis case mix",
+            label="same cases, competence reduced")
+    ax.annotate(f"case mix: {F['selection_share_of_observed_rise']:.0%}\nof the rise",
                 xy=(0.75, F["selection_rise_at_75"]), xytext=(0.30, 2.05),
                 fontsize=7.6, color=AMBER,
                 arrowprops=dict(arrowstyle="->", color=AMBER, lw=0.9))
     ax.set_xlabel("share of routine incidents handled automatically", fontsize=8.6)
     ax.set_ylabel("mean time to resolve, relative to baseline", fontsize=8.5)
     ax.set_ylim(0.9, 2.6)
-    ax.set_title("c. two explanations of the same measurement", fontsize=9.5,
+    ax.set_title("c. mean resolution time", fontsize=9.5,
                  color=INK, loc="left")
     ax.legend(fontsize=7.2, frameon=False, loc="upper left")
     _style(ax)

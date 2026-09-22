@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "id": "benchmarks",
-  "started": "2026-09-22T20:05:07.724402+00:00",
-  "finished": "2026-09-22T20:05:08.536033+00:00",
+  "started": "2026-09-22T20:03:49.489558+00:00",
+  "finished": "2026-09-22T20:03:50.582917+00:00",
   "command": [
     "uv",
     "run",
@@ -24,15 +24,15 @@
   "input_scope": "execution-v1",
   "additional_inputs": [],
   "inputs": {
-    "simulation/analyses.py": "8a308549061ab065de4faf728d1a585ba98ed0177ab9bbee0693dcc409838e45",
-    "simulation/figures.py": "81d6c3181e44747436be961317d5046fd467269c87947661977c5dba02407368",
+    "simulation/analyses.py": "fb21b0c5e29718890a57088cada3e4780ea72351514e566a36836d90004f93f7",
+    "simulation/figures.py": "57cf11d5876cdfaa6fe0773788f2e035e6a7fd3201f8248427210b300144507e",
     "simulation/pyproject.toml": "b7dda07411f73e08fce267752d0340251b1f530f2716d88d5076ccf842dba3d6",
-    "simulation/run_all.py": "a92f89d103eced968fee87af6735e679f23b704fc8c53966a76752acda5c802d",
+    "simulation/run_all.py": "680b1a2860c7a4dd5c237cd119c9a50bcb14dad67ce1fa065b6b8db566243fab",
     "simulation/uv.lock": "a8490e0483ef1a7235890dc12752db513c8fbbedb975b47cc80a50f6b318e3d3"
   },
   "artifacts": {
-    "simulation/output/results.json": "b787248c658a1c3096f7413c02056bda5c32cf7d4690e0d9b1f1e9fcd6eb1968",
+    "simulation/output/results.json": "c809db5d2be38b91f8a194a8fa4e10d9bb29171053551284cfe757d211acdf43",
     "simulation/output/figures/allocation.png": "0b4de07e07e2c8494dd299bfd215b0bcddb9877bf80ad48f94f3953024aa311e",
-    "simulation/output/figures/fallback.png": "ad1c678c7ed1ba55787ddcfe9c9a7d14c78d450a8fe88e9086ab3aad6e163c48"
+    "simulation/output/figures/fallback.png": "189e8bb12eb046150f97327d74679736fdbc2d531e5a49b323b050eb282fcf0e"
   }
 }

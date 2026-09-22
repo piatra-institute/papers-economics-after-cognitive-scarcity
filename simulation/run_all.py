@@ -40,9 +40,9 @@ def main() -> None:
     print("fallback:")
     print(f"  a person is optimal in {F['human_optimal_share']:.2%} of the plane; a "
           f"second system needs dependence at or below "
-          f"{F['max_dependence_a_second_system_can_carry']:.3f}")
+          f"{F['max_dependence_exact']:.3f}")
     print(f"  a degraded responder falls below containment at "
-          f"{F['routine_share_at_which_a_person_loses_to_containment']:.0%} automation")
+          f"{F['containment_crossing_exact']:.1%} automation")
     print(f"  at 75% automation, case mix alone raises resolution time "
           f"{F['selection_rise_at_75']:.2f}x; that is "
           f"{F['selection_share_of_observed_rise']:.0%} of the combined rise")

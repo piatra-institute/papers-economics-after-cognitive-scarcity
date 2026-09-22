@@ -2,6 +2,16 @@
 
 Dated log of editorial passes and verification runs. Newest first.
 
+## 2026-09-22 — prose revision
+
+Prose revision against the house standards, and correction of two numerical errors.
+  - Corrected: the containment crossing, published as 50 percent automation of routine incidents, is 43.2 percent. The 50 percent figure was the first coarse grid point past the crossing; the responder's conditional success is linear in the automated share, so the crossing has a closed form, (1 - 0.55 / (0.72 x 0.9)) / 0.35 = 0.432. Abstract, text, figure 2(b) and the claim ledger now report 43.2 percent.
+  - Corrected: the independence a second automated system needs, published as 0.341, is 0.352. The 0.341 figure was the largest grid value below the bound; the exact bound is one minus the responder's conditional success, 1 - 0.648.
+  - Both corrections are computed in closed form in `simulation/analyses.py`, and three new invariants check them against the grid (27 invariants pass).
+  - Manuscript rewritten paragraph by paragraph; prose shortened from about 3,200 to about 2,650 words. Removed first-person singular, self-reference, meta-commentary, epigrams and contrast framing.
+  - Figure titles and annotations rewritten; figure 2(a) legend given an opaque frame so the 'human' swatch is visible.
+  - Claim ledger re-bound; all 23 bindings pass. README rewritten as one line per paragraph with the new abstract.
+
 ## 2026-09-05 — v1, complete
 
 Scope: the whole paper, the three benchmarks, and the evidence base, from the

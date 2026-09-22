@@ -25,27 +25,12 @@ control someone can actually run.
 
 ## Reverse outline
 
-1. *The planner who was right* — sets the error as a choice of object rather
-   than an arithmetic mistake, concedes the historical record explicitly so the
-   paper cannot be dismissed on a priority claim, and states the counterfactual
-   with its four exclusions. The exclusions are load-bearing: they are the only
-   places a surviving human role can come from, and sections 3 and 4 both cash
-   that out.
-2. *Identical intelligence, eighty-one to one* — the allocation benchmark. Shows
-   that the premise determines nothing about distribution, which is what stops
-   the paper from being read as a prediction of either equality or concentration.
-3. *The permanent-remainder assumption* — the logical gap, the limit, the
-   cancellation, and what an atom buys. Carries the central result.
-4. *Where the fallback argument is right, and where it stops* — the concrete
-   case, conceded first and then bounded. Contains the paper's fairest passage
-   and its most immediately usable one.
-5. *What free cognition does not dissolve* — three surviving constraints, so the
-   paper cannot be read as claiming that free reasoning solves institutions.
-6. *What is not being claimed* — the limits, the refusal of the priority claim,
-   and the list of what a claimant now owes.
-
-Section 2 could be cut without damaging section 3, and is kept because without
-it the task result reads as a claim about incomes rather than about tasks.
+1. *Introduction* — the planner analogy, the Lucas critique, prior work on machine-dominated production, and the counterfactual with its four exclusions.
+2. *Distribution under identical intelligence* — the two-good equilibrium, the three pooling rules, the support check, and the tenfold-output case.
+3. *The permanent-remainder assumption* — the invalid inference, the task model and its limit, the nonempty frontier, the cancellation of the arrival rate, tasks with non-cognitive requirements, and the income share.
+4. *Human fallback after automated incident response* — Bainbridge's concern, the fallback comparison, the independence requirement, the containment crossing, and the case-mix confound.
+5. *Constraints that free cognition does not remove* — impossibility results, mechanisms that fail at zero cost, and the choice of objectives.
+6. *Implications and limitations* — the status of the benchmarks, the target of the argument, concrete tests, and the implication of the allocation result.
 
 ## Strongest rival
 
